@@ -28,5 +28,5 @@ env_variables:
   CLOUDSQL_USER: root
   CLOUDSQL_DB: chatapp
   CLOUDSQL_PASSWORD: M6tkP0l9e2zojrj6
-  CLOUDSQL_DSN: /cloudsql/qwiklabs-gcp-03-59e9d40bbeec:us-central1:chatdata
+  CLOUDSQL_DSN: qwiklabs-gcp-04-df912a8ed331:asia-south1:chatdata
 # [END gae_cloudsql_mysql_env]

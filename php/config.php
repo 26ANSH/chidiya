@@ -1,11 +1,11 @@
 <?php
-  $hostname = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "chatapp";
+  $hostname = 'qwiklabs-gcp-04-df912a8ed331:asia-south1:chatdata';
+  $username = 'root';
+  $password = 'M6tkP0l9e2zojrj6';
+  $dbname = 'chatapp';
 
-  $conn = mysqli_connect($hostname, $username, $password, $dbname);
-  if(!$conn){
-    echo "Database connection error".mysqli_connect_error();
-  }
+  $conn = mysqli_connect(null, $username, $password, $dbname, null, $hostname);
+  if (!$conn) {
+						echo "Error!".mysqli_connect_error();
+					}
 ?>
