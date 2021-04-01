@@ -1,4 +1,4 @@
-<?php 
+<?php
   session_start();
   if(isset($_SESSION['unique_id'])){
     header("location: users.php");
@@ -6,40 +6,64 @@
 ?>
 
 <?php include_once "header.php"; ?>
+<style media="screen">
+body{
+    background: lightblue;
+}
+.button {
+  border-radius: 4px;
+  background-color: yellow;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
 <body>
   <div class="wrapper">
     <section class="form signup">
-      <header>Realtime Chat App</header>
-      <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
-        <div class="error-text"></div>
-        <div class="name-details">
-          <div class="field input">
-            <label>First Name</label>
-            <input type="text" name="fname" placeholder="First name" required>
-          </div>
-          <div class="field input">
-            <label>Last Name</label>
-            <input type="text" name="lname" placeholder="Last name" required>
-          </div>
-        </div>
-        <div class="field input">
-          <label>Email Address</label>
-          <input type="text" name="email" placeholder="Enter your email" required>
-        </div>
-        <div class="field input">
-          <label>Password</label>
-          <input type="password" name="password" placeholder="Enter new password" required>
-          <i class="fas fa-eye"></i>
-        </div>
-        <div class="field image">
-          <label>Select Image</label>
-          <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-        </div>
-        <div class="field button">
-          <input type="submit" name="submit" value="Continue to Chat">
-        </div>
-      </form>
-      <div class="link">Already signed up? <a href="login.php">Login now</a></div>
+      <header align="center">Chidiya</header>
+      <br>
+      <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_TBKozE.json"  background="#FF0000"  speed="1"  style="width: 375px; height: 300px;"  loop  autoplay></lottie-player>
+      <header align="center">Welcome !!!</header>
+      <br>
+      Chidiya is a free open source safe chatting interface developed by Ansh Maanas Yashraj Deepak Lakshay
+      <br>
+      <button class="button" onclick="window.location.href='signup.php'"><span>SignUp</span></button>
+      <button class="button" onclick="window.location.href='login.php'"><span>LogIn</span></button>
+      <br>
+      ©️ Copyright 2021 Group-2 19AITCC1-B
     </section>
   </div>
 
