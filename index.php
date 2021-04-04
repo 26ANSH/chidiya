@@ -59,10 +59,10 @@ body{
       <header align="center">Welcome !!!</header>
       <br>
       Chidiya is a free open source safe chatting interface developed by Ansh Maanas Yashraj Deepak Lakshay
-      <br>
-      <button class="button" onclick="window.location.href='signup.php'"><span>SignUp</span></button>
-      <button class="button" onclick="window.location.href='login.php'"><span>LogIn</span></button>
-      <br>
+      <div class="" align="center">
+        <button class="button" onclick="window.location.href='signup.php'"><span>SignUp</span></button>
+        <button class="button" onclick="window.location.href='login.php'"><span>LogIn</span></button>
+      </div>
       ©️ Copyright 2021 Group-2 19AITCC1-B
     </section>
   </div>

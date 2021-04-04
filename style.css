@@ -156,8 +156,10 @@ body{
 
 /* Users List CSS Start */
 .users{
+  float: left;
   padding: 25px 30px;
 }
+.indent section {width: 50%; float: left;}
 .users header,
 .users-list a{
   display: flex;

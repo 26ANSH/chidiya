@@ -1,10 +1,10 @@
 <?php
-  $hostname = 'qwiklabs-gcp-04-df912a8ed331:asia-south1:chatdata';
+  $hostname = 'localhost';
   $username = 'root';
-  $password = 'M6tkP0l9e2zojrj6';
+  $password = 'root';
   $dbname = 'chatapp';
 
-  $conn = mysqli_connect(null, $username, $password, $dbname, null, $hostname);
+  $conn = mysqli_connect($hostname, $username, $password, $dbname);
   if (!$conn) {
 						echo "Error!".mysqli_connect_error();
 					}

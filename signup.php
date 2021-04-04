@@ -34,7 +34,7 @@
         </div>
         <div class="field image">
           <label>Select display Picture</label>
-          <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+          <input type="file" id="image" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg">
         </div>
         <div class="field button">
           <input type="submit" name="submit" value="Register">
