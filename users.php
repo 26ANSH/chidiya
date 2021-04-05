@@ -7,12 +7,8 @@
 ?>
 <?php include_once "header.php"; ?>
 <style media="screen">
-.indent{
-  float: left;
-}
 .wrapper_my
 {
-  margin: 20px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
@@ -20,8 +16,11 @@
 }
 </style>
 <body>
+   <div class="wrapper_my">
+     Profile
+   </div>
   <div class="wrapper">
-    <!-- <section class="users"> -->
+    <section class="users">
       <header>
         <div class="content">
           <?php
@@ -38,30 +37,16 @@
         </div>
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
       </header>
-      <!-- <div class="search">
-        <span class="text">Let's Chat</span>
+      <div class="search">
+        <span class="text">Select an user to start chat</span>
         <input type="text" placeholder="Enter name to search...">
         <button><i class="fas fa-search"></i></button>
       </div>
       <div class="users-list">
 
       </div>
-    </section> -->
+    </section>
   </div>
-
-  <div class="wrapper_my">
-
-      <section class="users indent">
-        <div class="search">
-          <span class="text">Let's Chat</span>
-          <input type="text" placeholder="Enter name to search...">
-          <button><i class="fas fa-search"></i></button>
-        </div>
-        <div class="users-list">
-
-        </div>
-      </section>
-</div>
 
   <script src="javascript/users.js"></script>
 
