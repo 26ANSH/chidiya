@@ -1,5 +1,5 @@
 <?php
-  $hostname = 'localhost';
+  $hostname = 'localhost:2000';
   $username = 'root';
   $password = 'root';
   $dbname = 'chatapp';
@@ -9,3 +9,4 @@
 						echo "Error!".mysqli_connect_error();
 					}
 ?>
+x
