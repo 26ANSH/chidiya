@@ -7,19 +7,50 @@
 ?>
 <?php include_once "header.php"; ?>
 <style media="screen">
-.wrapper_my
-{
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-              0 32px 64px -48px rgba(0,0,0,0.5);
+.button {
+  border-radius: 4px;
+  background-color: yellow;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 15px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 </style>
 <body>
-   <div class="wrapper_my">
-     Profile
-   </div>
   <div class="wrapper">
+
+    <button type="button" onclick="windows."name="button"></button>
     <section class="users">
       <header>
         <div class="content">
@@ -35,17 +66,11 @@
             <p><?php echo $row['status']; ?></p>
           </div>
         </div>
-        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
       </header>
-      <div class="search">
-        <span class="text">Select an user to start chat</span>
-        <input type="text" placeholder="Enter name to search...">
-        <button><i class="fas fa-search"></i></button>
-      </div>
-      <div class="users-list">
-
-      </div>
-    </section>
+      <br>
+      <a href="chat.php?user_id=<?php echo $row['unique_id']; ?>" class="button"><span>Lets's Chat</span></a>
+      <a href="" class="button"><span>Edit</span></a>
+      <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="button"><span>Logout</span></a>
   </div>
 
   <script src="javascript/users.js"></script>
