@@ -6,19 +6,21 @@
   }
 ?>
 <?php include_once "header.php"; ?>
+  <script>(function(w, d) { w.CollectId = "606b2a09cc6de004cacdb443"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style media="screen">
 .button {
-  border-radius: 4px;
+  border-radius: 7px;
   background-color: yellow;
   border: none;
   color: black;
   text-align: center;
   font-size: 24px;
-  padding: 10px;
+  padding: 13px;
   width: 150px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin: 15px;
   font-weight: bold;
 }
 
@@ -35,7 +37,7 @@
   opacity: 0;
   top: 0;
   right: -20px;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
 .button:hover span {
@@ -46,11 +48,19 @@
   opacity: 1;
   right: 0;
 }
+.edit{
+  background: blue;
+  padding: 5px;
+  color: white;
+}
+.edit:hover{
+  background: white;
+  padding: 5px;
+  color: blue;
+}
 </style>
 <body>
   <div class="wrapper">
-
-    <button type="button" onclick="windows."name="button"></button>
     <section class="users">
       <header>
         <div class="content">
@@ -60,17 +70,19 @@
               $row = mysqli_fetch_assoc($sql);
             }
           ?>
-          <img src="php/images/<?php echo $row['img']; ?>" alt="">
+          <img src="php/images/<?php echo $row['img']; ?>" alt="" style="width:120px; height: 120px;">
           <div class="details">
+              <br>
             <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
-            <p><?php echo $row['status']; ?></p>
+            <p>Email : <?php echo $row['email']; ?></p>
+            <a href="" class="edit fas fa-user-edit"><span>Edit</span></a>
           </div>
         </div>
       </header>
+
       <br>
-      <a href="chat.php?user_id=<?php echo $row['unique_id']; ?>" class="button"><span>Lets's Chat</span></a>
-      <a href="" class="button"><span>Edit</span></a>
-      <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="button"><span>Logout</span></a>
+      <a href="chat.php?user_id=<?php echo $row['unique_id']; ?>" class="button fas fa-comments"><span>  Chat</span></a>
+      <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="button fas fa-sign-out-alt"><span> Logout</span></a>
   </div>
 
   <script src="javascript/users.js"></script>

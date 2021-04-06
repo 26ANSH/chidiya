@@ -23,7 +23,7 @@
           <i class="fas fa-eye"></i>
         </div>
         <div class="field button">
-          <input type="submit" name="submit" value="Let's Go">
+          <input type="submit" name="submit" value="Continue to Chat">
         </div>
       </form>
       <div class="link">Not yet signed up? <a href="signup.php">Signup now</a></div>
