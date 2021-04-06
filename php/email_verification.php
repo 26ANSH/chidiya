@@ -1,5 +1,5 @@
 <?php
-include 'php/config.php';
+include_once "config.php";
 if(!empty($_GET['code']) && isset($_GET['code']))
 {
 $code=$_GET['code'];
@@ -15,7 +15,6 @@ if($result4>0)
 $st=1;
 $result1=mysqli_query($con,"UPDATE users SET verify='$st' WHERE activationcode='$code'");
 $msg="Your account is activated";
-header
 }
 else
 {

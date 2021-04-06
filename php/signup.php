@@ -5,7 +5,7 @@
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $verify=0;
+    $verify = 0;
     $activationcode=md5($email.time());
 
     if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)){
@@ -42,18 +42,17 @@
                                         $_SESSION['unique_id'] = $result['unique_id'];
                                         echo "success";
 
-                                        $to=$email;
-                                        $msg= "Thank you for new Registration.";
-                                        $subject="Email verification @ Chidiya | chatting Website";
-                                        $headers .= "MIME-Version: 1.0"."\r\n";
-                                        $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
-                                        $headers .= 'From:Chidiya | Chatting Website <info@phpgurukul.com>'."\r\n";
-                                        $ms.="<html></body><div><div>Dear $fname,</div></br></br>";
-                                        $ms.="<div style='padding-top:8px;'>Please click The following link For verifying and activation of your account</div>
-                                        <div style='padding-top:10px;'><a href='localhost:2000/chidiya/email_verification.php?code=$activationcode'>Click Here</a></div>
-                                        <div style='padding-top:4px;'>Powered by <a href='localhost:2000/chidiya/index.html'>Chidiya</a></div></div>
-                                        </body></html>";
-                                        mail($to,$subject,$ms,$headers);
+                                        // $to=$email;
+                                        // $msg= "Thank you for new Registration.";
+                                        // $subject="Email verification @ Chidiya | chatting Website";
+                                        // $headers = "From: project_mitron@yahoo.com \r\n";
+                                        // $headers .= "MIME-Version: 1.0" . "\r\n";
+                                        // $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+                                        // $ms ="<a href='http://localhost:2000/chidiya/php/email_verification.php?code=$activationcode'>Verify Your Account</a>";
+                                        //
+                                        // //header('location:chidiya/index.php')
+                                        //
+                                        // mail($to,$subject,$ms,$headers);
                                         // <script>alert('Registration successful, please verify your account from the link given in your Email-Id');</script>;
                                         // <script>window.location = 'login.php';</script>;
                                     }

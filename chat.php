@@ -6,9 +6,15 @@
   }
 ?>
 <?php include_once "header.php"; ?>
+<?php
+  $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+  if(mysqli_num_rows($sql) > 0){
+    $row = mysqli_fetch_assoc($sql);
+  }
+?>
 <style media="screen">
 body{
-  background: lightgreen;
+  background: <?php echo $row['theme']; ?>;
   margin: 20px;
 }
 .indent{
