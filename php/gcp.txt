@@ -2,7 +2,7 @@
 
 <!-- For gcp -->
 <!-- <?php
-  // $hostname = 'qwiklabs-gcp-04-df912a8ed331:asia-south1:chatdata';
+  // $hostname = 'qwiklabs-gcp-02-35e1d8e6dbf6:asia-south1:chatdata';
   // $username = 'root';
   // $password = 'zxmbdBPmOOnENoyJ';
   // $dbname = 'chatapp';

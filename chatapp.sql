@@ -1,21 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 18, 2021 at 11:44 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.26
+-- Host: localhost:8889
+-- Generation Time: Apr 06, 2021 at 08:06 PM
+-- Server version: 5.7.30
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `chatapp`
@@ -47,8 +40,11 @@ CREATE TABLE `users` (
   `lname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL
+  `img` varchar(255) NOT NULL DEFAULT 'default.png',
+  `status` varchar(255) NOT NULL,
+  `activationcode` varchar(255) NOT NULL,
+  `verify` int(11) NOT NULL,
+  `theme` varchar(255) NOT NULL DEFAULT 'lightblue'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -82,8 +78,3 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
