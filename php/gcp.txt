@@ -1,14 +1,14 @@
 
 
 <!-- For gcp -->
-<!-- <?php
-  // $hostname = 'qwiklabs-gcp-02-35e1d8e6dbf6:asia-south1:chatdata';
-  // $username = 'root';
-  // $password = 'zxmbdBPmOOnENoyJ';
-  // $dbname = 'chatapp';
-  //
-  // $conn = mysqli_connect(null, $username, $password, $dbname, null, $hostname);
-  // if (!$conn) {
-	// 					echo "Error!".mysqli_connect_error();
-	// 				}
-?> -->
+<?php
+   $hostname = 'qwiklabs-gcp-02-35e1d8e6dbf6:asia-south1:chatdata';
+   $username = 'root';
+   $password = 'zxmbdBPmOOnENoyJ';
+   $dbname = 'chatapp';
+
+  $conn = mysqli_connect(null, $username, $password, $dbname, null, $hostname);
+   if (!$conn) {
+	 					echo "Error!".mysqli_connect_error();
+					}
+?>
