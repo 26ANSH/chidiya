@@ -134,7 +134,13 @@ body{
             <div class="dropdown">
               <button class="dropbtn"><?php echo $row['theme']; ?></button>
               <div class="dropdown-content">
-                <a href="<?php $sql = mysqli_query($conn, "UPDATE users SET theme=$codee WHERE unique_id={$_SESSION['unique_id']}" );?>">lightgreen</a>
+                <a href="php/theme.php?unique_id=<?php echo $row['unique_id']?>&code=lightblue">Default</a>
+                <a href="php/theme.php?unique_id=<?php echo $row['unique_id']?>&code=lightgreen">Green</a>
+                <a href="php/theme.php?unique_id=<?php echo $row['unique_id']?>&code=lightpink">Pink</a>
+                <a href="php/theme.php?unique_id=<?php echo $row['unique_id']?>&code=lightskyblue">Sky Blue</a>
+                <a href="php/theme.php?unique_id=<?php echo $row['unique_id']?>&code=lightsalmon">Orange</a>
+                <a href="php/theme.php?unique_id=<?php echo $row['unique_id']?>&code=lightyellow">Yellow</a>
+                <a href="php/theme.php?unique_id=<?php echo $row['unique_id']?>&code=black">Black</a>
               </div>
             </div>
           </div>
