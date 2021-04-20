@@ -60,7 +60,7 @@
         <h1 class="fas fa-hand-holding-heart">  Welcome</h1>
       </header>
       <br>
-      Chidiya is a free open source safe chatting interface developed by Group-2
+      Chidiya is a free open source safe chatting interface developed by Ansh and Maanas 
       <div class="" align="center">
         <button class="button fas fa-user-plus" onclick="window.location.href='signup.php'"><span>SignUp</span></button>
         <button class="button fas fa-sign-in-alt" onclick="window.location.href='login.php'"><span>LogIn</span></button>
