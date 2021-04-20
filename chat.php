@@ -29,7 +29,7 @@ body{
               0 32px 64px -48px rgba(0,0,0,0.5);
 }
 </style>
-
+<!-- User Chat -->
 <body>
   <div class="wrapper_my">
     <section class="users">
@@ -37,7 +37,7 @@ body{
         <h1 class="fas fa-address-book" >  Users</h1>
       </header>
       <div class="search">
-        <span class="text">Select an user to start chat</span>
+        <span class="text">Search for Users to chat</span>
         <input type="text" placeholder="Enter name to search...">
         <button><i class="fas fa-search"></i></button>
       </div>
@@ -46,7 +46,26 @@ body{
       </div>
     </section>
 </div>
+  <!-- <script src="javascript/users.js"></script> -->
 
+<!-- Group Chat -->
+<div class="wrapper_my">
+  <section class="users">
+    <header>
+      <h1 class="fas fa-address-book" >  Groups</h1>
+    </header>
+    <div class="search">
+      <span class="text">Search for Groups to chat</span>
+      <input type="text" placeholder="Enter name to search...">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="groups-list">
+
+    </div>
+  </section>
+</div>
+
+<!-- Chat Screen -->
 <div class="wrapper">
     <section class="chat-area">
       <header>
@@ -76,7 +95,7 @@ body{
       </form>
     </section>
   </div>
+  <script src="javascript/groups.js"></script>
   <script src="javascript/chat.js"></script>
-    <script src="javascript/users.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-  // session_start();
+  session_start();
   include_once "config.php";
     $user_id = $_GET['unique_id'];
     $theme = $_GET['code'];
