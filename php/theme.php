@@ -1,9 +1,5 @@
 <?php
-  session_start();
-  include_once "config.php";
-    $user_id = $_GET['unique_id'];
-    $theme = $_GET['code'];
-    // echo "UPDATE users SET theme='{$theme}' WHERE unique_id=$user_id";
-    $sql = mysqli_query($conn, "UPDATE users SET theme='{$theme}' WHERE unique_id=$user_id");
-    header("location: ../users.php");
+    include_once "config.php";
+    $sql = mysqli_query($conn, "UPDATE users SET theme='{$_GET['code']}' WHERE unique_id='{$_GET['unique_id']}'");
+    header("location: ..");
 ?>
