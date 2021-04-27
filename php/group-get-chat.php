@@ -10,9 +10,7 @@
         $options = 0;
         $iv = '60dbd63e8d8967a09110d2caef6e6aab';
         $key = "19BCS407719BCS407519BCS407419BCS408519BCS4076";
-        $sql = "SELECT * FROM messages LEFT JOIN users ON users.unique_id = messages.outgoing_msg_id
-                WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
-                OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id";
+        $sql = "SELECT * FROM messages WHERE incoming_msg_id={$incoming_id} ORDER BY msg_id";
         $query = mysqli_query($conn, $sql);
         if(mysqli_num_rows($query) > 0){
             while($row = mysqli_fetch_assoc($query)){
@@ -27,10 +25,14 @@
                 }else
                 {
                     $decryption=openssl_decrypt ($row['msg'], $ciphering, $key, $options, $iv);
+                    $name = "SELECT fname FROM users WHERE unique_id={$row['outgoing_msg_id']}";
+                    $name_query = mysqli_query($conn, $name);
+                    $row_name = mysqli_fetch_assoc($name_query);
                     $output .= '<div class="chat incoming">
-                                <img src="php/images/'.$row['img'].'" alt="">
+                                <img src="php/images/default.png" alt="">
                                 <div class="details">
                                     <p>'. $decryption .'</p>
+                                    '.$row_name['fname'].'
                                 </div>
                                 </div>';
                 }

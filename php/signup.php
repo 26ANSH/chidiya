@@ -42,7 +42,10 @@
                                         $_SESSION['unique_id'] = $result['unique_id'];
                                         echo "success";
 
-                                        // $to=$email;
+                                        $add_grp = mysqli_query($conn, "INSERT INTO group_members VALUES('1001', {$result['unique_id']})");
+                                        $add_grp = mysqli_query($conn, "UPDATE groups SET group_members=group_members+1");
+
+                                        // $to=$email;s
                                         // $msg= "Thank you for new Registration.";
                                         // $subject="Email verification @ Chidiya | chatting Website";
                                         // $headers = "From: project_mitron@yahoo.com \r\n";

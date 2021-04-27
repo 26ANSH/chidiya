@@ -1,11 +1,17 @@
 <?php
-    while($row = mysqli_fetch_assoc($query)){
+    while($row = mysqli_fetch_assoc($query))
+    {
+      $ciphering = "AES-128-CTR";
+      $iv_length = openssl_cipher_iv_length($ciphering);
+      $options = 0;
+      $iv = '60dbd63e8d8967a09110d2caef6e6aab';
+      $key = "19BCS407719BCS407519BCS407419BCS408519BCS4076";
         $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row['unique_id']}
-                OR outgoing_msg_id = {$row['unique_id']}) AND (outgoing_msg_id = {$outgoing_id} 
+                OR outgoing_msg_id = {$row['unique_id']}) AND (outgoing_msg_id = {$outgoing_id}
                 OR incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC LIMIT 1";
         $query2 = mysqli_query($conn, $sql2);
         $row2 = mysqli_fetch_assoc($query2);
-        (mysqli_num_rows($query2) > 0) ? $result = $row2['msg'] : $result ="No message available";
+        (mysqli_num_rows($query2) > 0) ? $result = openssl_decrypt ($row2['msg'] , $ciphering, $key, $options, $iv): $result ="No message available";
         (strlen($result) > 28) ? $msg =  substr($result, 0, 28) . '...' : $msg = $result;
         if(isset($row2['outgoing_msg_id'])){
             ($outgoing_id == $row2['outgoing_msg_id']) ? $you = "You: " : $you = "";

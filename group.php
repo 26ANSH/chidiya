@@ -29,22 +29,22 @@ body{
               0 32px 64px -48px rgba(0,0,0,0.5);
 }
 </style>
-<!-- User Chat -->
-<body>
-  <div class="wrapper_my">
-    <section class="users">
-      <header>
-        <h1 class="fas fa-address-book" >  Users</h1>
-      </header>
-      <div class="search">
-        <span class="text">Search for Users to chat</span>
-        <input type="text" placeholder="Enter name to search...">
-        <button><i class="fas fa-search"></i></button>
-      </div>
-      <div class="users-list">
+<!-- Group Chat -->
+<div class="wrapper_my">
+  <section class="users">
+    <header>
+      <h1 class="fas fa-users" >  Groups</h1>
 
-      </div>
-    </section>
+    </header>
+    <div class="search">
+      <span class="text">Search for Groups to chat</span>
+      <input type="text" placeholder="Enter name to search...">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="users-list">
+
+    </div>
+  </section>
 </div>
 
 <!-- Chat Screen -->
@@ -52,8 +52,9 @@ body{
     <section class="chat-area">
       <header>
         <?php
-          $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
-          $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
+          $grp_id = mysqli_real_escape_string($conn, $_GET['grp_id']);
+          $sql = mysqli_query($conn, "SELECT * FROM groups WHERE group_unique_id = {$grp_id}");
+          // "SELECT * FROM groups WHERE groups.group_unique_id=(SELECT grp_id FROM group_members WHERE member_id={$outgoing_id})";
           if(mysqli_num_rows($sql) > 0){
             $row = mysqli_fetch_assoc($sql);
           }else{
@@ -61,23 +62,25 @@ body{
           }
         ?>
         <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-        <img src="php/images/<?php echo $row['img']; ?>" alt="">
+        <img src="php/images/default.png" alt="">
         <div class="details">
-          <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
-          <p><?php echo $row['status']; ?></p>
+          <span><?php echo $row['group_name'];?></span>
+          <p>online:<?php echo " ".$row['group_members']; ?></p>
         </div>
       </header>
       <div class="chat-box">
 
       </div>
       <form action="#" class="typing-area">
-        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $grp_id; ?>" hidden>
         <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
         <button><i class="fab fa-telegram-plane"></i></button>
       </form>
     </section>
   </div>
-  <script src="javascript/users.js"></script>
-  <script src="javascript/chat.js"></script>
+  <script src="javascript/groups.js"></script>
+  <script src="javascript/group-chat.js"></script>
+  <script>
+</script>
 </body>
 </html>

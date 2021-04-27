@@ -2,6 +2,7 @@ const searchBar = document.querySelector(".search input"),
 searchIcon = document.querySelector(".search button"),
 usersList = document.querySelector(".users-list");
 
+
 searchIcon.onclick = ()=>{
   searchBar.classList.toggle("show");
   searchIcon.classList.toggle("active");
@@ -48,4 +49,3 @@ setInterval(() =>{
   }
   xhr.send();
 }, 500);
-

@@ -149,6 +149,7 @@ body{
 
       <br>
       <a href="chat.php?user_id=<?php echo $row['unique_id']; ?>" class="button fas fa-comments"><span>  Chat</span></a>
+      <a href="group.php?grp_id=1001" class="button fas fa-group"><span>  Group</span></a>
       <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="button fas fa-sign-out-alt"><span> Logout</span></a>
             <!-- <a href="/group/chat.php?user_id=<?php echo $row['unique_id']; ?>" class="button fas fa-comments"><span>  Group Chat</span></a> -->
   </div>
