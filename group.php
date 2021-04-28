@@ -28,13 +28,20 @@ body{
   box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
               0 32px 64px -48px rgba(0,0,0,0.5);
 }
+.ok{
+  padding: 5pt;
+  background: blue;
+  color: white;
+  margin-left: 10pt;
+}
 </style>
 <!-- Group Chat -->
 <div class="wrapper_my">
   <section class="users">
     <header>
       <h1 class="fas fa-users" >  Groups</h1>
-
+      <button onclick="mygrp()" class="fas fa-user-plus ok">Join Group</button>
+      <button onclick="myFunction()" class="fas fa-user-plus ok">Add Group</button>
     </header>
     <div class="search">
       <span class="text">Search for Groups to chat</span>
@@ -67,6 +74,7 @@ body{
           <span><?php echo $row['group_name'];?></span>
           <p>online:<?php echo " ".$row['group_members']; ?></p>
         </div>
+        <button onclick="showkey()" id="txtHint" class="fas fa-user-plus ok">Invite</button>
       </header>
       <div class="chat-box">
 
@@ -79,8 +87,41 @@ body{
     </section>
   </div>
   <script src="javascript/groups.js"></script>
-  <script src="javascript/group-chat.js"></script>
   <script>
+function myFunction()
+{
+  var xhttp;
+  var person = prompt("Please enter Your Group Name", "Group name > no numeric");
+  if (person != null) {
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "php/makegroup.php?unique_id=<?php echo $_SESSION['unique_id']?>&code="+person, true);
+    xhttp.send();
+  }
+}
+function mygrp()
+{
+  var xhttp;
+  var person = prompt("Join a grp", "Enter four digit key");
+  if (person != null) {
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "php/usergrp.php?unique_id=<?php echo $_SESSION['unique_id']?>&code="+person, true);
+    xhttp.send();
+  }
+}
+
+function showkey()
+{
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "php/joingrp.php?unique_id=<?php echo $_SESSION['unique_id']?>&q=<?php echo $grp_id; ?>", true);
+  xhttp.send();
+}
 </script>
+  <script src="javascript/group-chat.js"></script>
 </body>
 </html>

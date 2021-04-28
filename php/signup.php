@@ -43,8 +43,7 @@
                                         echo "success";
 
                                         $add_grp = mysqli_query($conn, "INSERT INTO group_members VALUES('1001', {$result['unique_id']})");
-                                        $add_grp = mysqli_query($conn, "UPDATE groups SET group_members=group_members+1");
-
+                                        $add_grp = mysqli_query($conn, "UPDATE groups SET group_members=group_members+1 WHERE group_unique_id=1001");
                                         // $to=$email;s
                                         // $msg= "Thank you for new Registration.";
                                         // $subject="Email verification @ Chidiya | chatting Website";
