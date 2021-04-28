@@ -60,7 +60,7 @@ body{
       <header>
         <?php
           $grp_id = mysqli_real_escape_string($conn, $_GET['grp_id']);
-          $sql = mysqli_query($conn, "SELECT * FROM groups WHERE group_unique_id = {$grp_id}");
+          $sql = mysqli_query($conn, "SELECT * FROM mygrps WHERE group_unique_id = {$grp_id}");
           // "SELECT * FROM groups WHERE groups.group_unique_id=(SELECT grp_id FROM group_members WHERE member_id={$outgoing_id})";
           if(mysqli_num_rows($sql) > 0){
             $row = mysqli_fetch_assoc($sql);
