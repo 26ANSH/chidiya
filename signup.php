@@ -76,10 +76,10 @@ content: "✖";;
               <p id="length" class="invalid">Minimum 8 characters</p>
             </div>
         </div>
-        <div class="field image">
+        <!-- <div class="field image">
           <label class="fas fa-camera-retro">Select display Picture</label>
           <input type="file" id="image" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg">
-        </div>
+        </div> -->
         <div class="field button">
           <input type="submit" name="submit" value="Register">
         </div>
