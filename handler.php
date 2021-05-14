@@ -10,6 +10,12 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path'])
     case '/javascript/chat.js':
         require _DIR_.'/javascript/chat.js';
         break;
+    case '/javascript/group-chat.js':
+        require _DIR_.'/javascript/group-chat.js';
+        break;
+    case '/javascript/groups.js':
+        require _DIR_.'/javascript/groups.js';
+        break;
     case '/javascript/login.js':
         require _DIR_.'/javascript/login.js';
         break;
@@ -21,6 +27,9 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path'])
         break;
     case '/javascript/users.js':
         require _DIR_.'/javascript/users.js';
+        break;
+    case 'php/images/default.png':
+        require _DIR_.'php/images/default.png';
         break;
     case '/php/config.php':
         require _DIR_.'/php/config.php';
@@ -52,6 +61,30 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path'])
     case '/php/users.php':
         require _DIR_.'/php/users.php';
         break;
+    case '/php/group_data.php':
+        require _DIR_.'/php/group_data.php';
+        break;
+    case '/php/group-get-chat.php':
+        require _DIR_.'/php/group-get-chat.php';
+        break;
+    case '/php/group-insert-chat.php':
+        require _DIR_.'/php/group-insert-chat.php';
+        break;
+    case '/php/group.php':
+        require _DIR_.'/php/group.php';
+        break;
+    case '/php/joingrp.php':
+        require _DIR_.'/php/joingrp.php';
+        break;
+    case '/php/makegroup.php':
+        require _DIR_.'/php/makegroup.php';
+        break;
+    case '/php/theme.php':
+        require _DIR_.'/php/theme.php';
+        break;
+    case '/php/usergrp.php':
+        require _DIR_.'/php/usergrp.php';
+        break;
     case '/chat.php':
         require 'chat.php';
         break;
@@ -77,6 +110,9 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path'])
         require 'style.css';
         break;
     case '/users.php':
+        require 'users.php';
+        break;
+    case '/group.php':
         require 'users.php';
         break;
 

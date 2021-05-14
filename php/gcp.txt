@@ -4,7 +4,7 @@
 <?php
    $hostname = 'qwiklabs-gcp-02-35e1d8e6dbf6:asia-south1:chatdata';
    $username = 'root';
-   $password = 'zxmbdBPmOOnENoyJ';
+   $password = 'IoKCao04pPO5t5Jt';
    $dbname = 'chatapp';
 
   $conn = mysqli_connect(null, $username, $password, $dbname, null, $hostname);
